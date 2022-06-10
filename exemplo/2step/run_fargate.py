@@ -2,11 +2,11 @@ import boto3
 
 ecs = boto3.client('ecs')
 
-cluster_name = 'malves-s3-storage-classes'
-subnet_id = 'subnet-025cb151539c1106c'
-sg_id = 'sg-058b0c7719434b946' 
-bucket_name = 'malves-s3-storage-classes'
-task_definition = 'storage-classes-2step:1' 
+cluster_name = ''
+subnet_id = ''
+sg_id = '' 
+bucket_name = ''
+task_definition = '' 
 
 for index in range(5):
     if index < 10:
@@ -32,7 +32,7 @@ for index in range(5):
         overrides={
             'containerOverrides': [
                 {
-                    'name': 's3-storage-classes-2step',
+                    'name': '',
                     'environment': [
                         {
                             'name': 'BUCKET_NAME',
@@ -46,7 +46,7 @@ for index in range(5):
                 },
             ]
         },
-        startedBy='VALCANN',
+        startedBy='',
         taskDefinition=task_definition
     )
     
